@@ -30,4 +30,7 @@ apt install -y nvidia-utils-$version nvidia-driver-$version nvidia-cuda-toolkit
 # install pip
 apt install -y python3-pip
 
+# install qperf
+apt install -y qperf
+
 > /local/startup_service_done
