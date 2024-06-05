@@ -1,12 +1,12 @@
 """Four r7525 nodes connected via two LANs.  Link speed is set to
 100Gb/s and best effort. Each node has a read-only dataset mounted at
 /mydata that contains the DOCA host deb image and the DOCA BlueField
-image.
+image. The startup.sh will take a while to complete, check if /local/start_service_done
+exists to tell if the script completes.
 
 Instructions:
-Wait for the experiment to start, and then log into one or more of the nodes
-by clicking on them in the toplogy, and choosing the `shell` menu option.
-Use `sudo` to run root commands.
+Wait for the experiment to start, and wait for /local/repository/startup.sh to complete
+by checking if /local/start_service_done exists. The script takes a while to finish. Be patient.
 """
 
 # Import the Portal object.
