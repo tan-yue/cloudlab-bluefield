@@ -26,6 +26,9 @@ request = pc.makeRequestRSpec()
 pc.defineParameter("nodeCount", "Number of Nodes", portal.ParameterType.INTEGER, 4,
                    longDescription="must be greater than 1")
 
+# Retrieve the values the user specifies during instantiation.
+params = pc.bindParameters()
+
 # Check parameter validity.
 if params.nodeCount <= 1:
     pc.reportError(portal.ParameterError("You must choose more than 1 node.", ["nodeCount"]))
