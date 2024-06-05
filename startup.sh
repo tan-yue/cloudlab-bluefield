@@ -1,3 +1,5 @@
+#!/bin/bash
+
 dpkg -i /mydata/doca-host-repo-ubuntu2204_2.2.0-0.0.3.2.2.0080.1.23.07.0.5.0.0_amd64.deb
 apt update && sudo apt upgrade -y
 apt install rshim=2.0.7 -y
