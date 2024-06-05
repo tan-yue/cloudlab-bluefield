@@ -9,3 +9,5 @@ sudo apt install doca-runtime doca-tools doca-sdk -y
 # we can wget as well
 # wget https://content.mellanox.com/BlueField/BFBs/Ubuntu22.04/DOCA_2.2.0_BSP_4.2.0_Ubuntu_22.04-2.23-07.prod.bfb
 sudo bfb-install --bfb /mydata/DOCA_2.2.0_BSP_4.2.0_Ubuntu_22.04-2.23-07.prod.bfb --config /local/repository/bf.cfg --rshim rshim0
+# for sshing into the BF card
+sudo ifconfig tmfifo_net0 192.168.100.1 netmask 255.255.255.0
