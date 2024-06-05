@@ -47,7 +47,7 @@ for i in range(4):
     # set hardware type.
     node.hardware_type = "r7525"
     # mount the dataset holding necessary NVIDIA images to /mydata
-    bs = node.Blockstore("bs", "/mydata")
+    bs = node.Blockstore("bs"+str(i), "/mydata")
     bs.dataset = "urn:publicid:IDN+clemson.cloudlab.us:praxis-pg0+imdataset+doca220ubuntu2204debbfb"
     # run startup.sh on each node
     node.addService(pg.Execute(
