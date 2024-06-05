@@ -1,4 +1,4 @@
-"""Four r7525 nodes connected via three LANs.  Link speed is set to
+"""Four r7525 nodes connected via two LANs.  Link speed is set to
 100Gb/s and best effort. Each node has a read-only dataset mounted at
 /mydata that contains the DOCA host deb image and the DOCA BlueField
 image.
@@ -24,7 +24,7 @@ request = pc.makeRequestRSpec()
 
 # Create LANs
 lans = []
-nlans = 3
+nlans = 2
 for i in range(nlans):
     lan = request.LAN()
     lan.best_effort = True
