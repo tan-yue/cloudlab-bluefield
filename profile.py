@@ -22,6 +22,16 @@ pc = portal.Context()
 # Create a Request object to start building the RSpec.
 request = pc.makeRequestRSpec()
 
+# Variable number of nodes.
+pc.defineParameter("nodeCount", "Number of Nodes", portal.ParameterType.INTEGER, 4,
+                   longDescription="must be greater than 1")
+
+# Check parameter validity.
+if params.nodeCount <= 1:
+    pc.reportError(portal.ParameterError("You must choose more than 1 node.", ["nodeCount"]))
+
+pc.verifyParameters()
+
 # Create LANs
 lans = []
 nlans = 2
@@ -34,7 +44,7 @@ for i in range(nlans):
     pass
 
 # Process nodes, adding to link or lan.
-for i in range(4):
+for i in range(params.nodeCount):
     # Create a node and add it to the request
     name = "node" + str(i)
     node = request.RawPC(name)
